@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "py-grpc"
+version = "0.1.0"
+description = "Framework to create a GRPC server in Python"
+authors = ["Aditya Mattos <adityamattos@hey.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+grpcio-tools = "^1.51.1"
+grpcio-health-checking = "^1.51.1"
+pydantic = "^1.10.2"
+grpcio = "^1.51.1"
+mypy-protobuf = "^3.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.scripts]
+grpc-server = 'py_grpc.server:serve'
+build-protobufs = 'py_grpc.commands.build_protobufs:build'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
